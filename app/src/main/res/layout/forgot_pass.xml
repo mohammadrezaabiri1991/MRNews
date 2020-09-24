@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="forgotPass"
+            type="com.mohammadreza.news.viewmodel.LoginViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_32dp">
+
+        <TextView
+            android:id="@+id/txtContentForgotPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/password_recovery"
+            android:textSize="@dimen/_26sp" />
+
+        <TextView
+            android:id="@+id/txtEnterEmailForgotPass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_16dp"
+            android:gravity="center"
+            android:text="@string/enter_your_email" />
+
+        <LinearLayout
+            android:id="@+id/linearSendToEmailForgotPass"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_54dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:background="@drawable/empty_round_style"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/edtSendToEmailForgotPass"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#00ffffff"
+                android:gravity="center"
+                android:hint="@string/email_address"
+                android:paddingStart="@dimen/_16dp"
+                android:paddingLeft="@dimen/_16dp"
+                android:paddingEnd="@dimen/_16dp"
+                android:paddingRight="@dimen/_16dp"
+                android:singleLine="true"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorHint" />
+
+            <ProgressBar
+                android:id="@+id/mProgressForgot"
+                android:layout_width="@dimen/_24dp"
+                android:layout_height="@dimen/_24dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="@dimen/_16dp"
+                android:layout_marginRight="@dimen/_16dp"
+                android:visibility="@{forgotPass.isProgressForgotVisible}" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtSendToEmailForgotPass"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_54dp"
+            android:layout_marginTop="@dimen/_16dp"
+            android:background="@drawable/full_rounded_style"
+            android:gravity="center"
+            android:onClick="@{v ->forgotPass.onClickForgotSendPasswordToEmail(v ,edtSendToEmailForgotPass,linearSendToEmailForgotPass)}"
+            android:singleLine="true"
+            android:text="@string/send_it"
+            android:textColor="@color/colorWhite" />
+
+
+    </LinearLayout>
+</layout>

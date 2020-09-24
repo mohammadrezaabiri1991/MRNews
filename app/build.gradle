@@ -1,0 +1,130 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    ndkVersion "20.0.5594570 "
+
+
+    defaultConfig {
+        applicationId "com.mohammadreza.news"
+        minSdkVersion 17
+        targetSdkVersion 29
+        versionCode 6
+        versionName "1.0.6"
+
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled = true
+        resConfigs "en"
+
+    }
+    buildTypes {
+
+        release {
+            minifyEnabled true
+            shrinkResources true
+            useProguard true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    useLibrary 'org.apache.http.legacy'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+
+    splits {
+        // Configures multiple APKs based on screen density.
+        density {
+
+            // Configures multiple APKs based on screen density.
+            enable true
+
+            // Specifies a list of screen densities Gradle should not create multiple APKs for.
+            exclude "ldpi", "xxhdpi", "xxxhdpi"
+
+            // Specifies a list of compatible screen size settings for the manifest.
+            compatibleScreens 'small', 'normal', 'large', 'xlarge'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.codesgood:justifiedtextview:1.1.0'
+    implementation 'com.budiyev.android:circular-progress-bar:1.2.2'
+
+
+//    Facebook sdk
+    implementation 'com.facebook.android:facebook-android-sdk:5.15.3'
+
+//    Live data
+    implementation "android.arch.lifecycle:extensions:1.1.1"
+    annotationProcessor "android.arch.lifecycle:compiler:1.1.1"
+
+
+    //    compressor
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex:rxjava:1.1.6'
+    implementation 'top.zibin:Luban:1.0.8'
+
+
+//    Retrofit
+    implementation 'com.squareup.retrofit:retrofit:1.7.1'
+    implementation 'com.squareup.retrofit2:converter-simplexml:2.6.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.7'
+    implementation('com.squareup.retrofit2:converter-simplexml:2.6.1') {
+        exclude module: 'stax-api'
+        exclude module: 'stax'
+        exclude module: 'xpp3'
+    }
+
+// EventBus
+    implementation 'org.greenrobot:eventbus:3.1.1'
+
+// PERSIAN_DATE
+    implementation 'ir.huri:JalaliCalendar:1.3.3'
+
+//    circleImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.9' // Or higher
+
+    implementation 'com.google.firebase:firebase-analytics:17.4.4'
+//    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+    implementation 'com.google.firebase:firebase-crashlytics:17.2.1'
+
+
+    implementation 'com.sun.mail:android-mail:1.5.5'
+    implementation 'com.sun.mail:android-activation:1.5.5'
+
+
+//    Image Downloader
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.19'
+
+    implementation 'com.android.volley:volley:1.1.1'
+    implementation 'org.jsoup:jsoup:1.10.2'
+
+
+}

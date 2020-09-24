@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1ABCaC</color>
+    <color name="colorPrimaryDark">#bb1ABCaC</color>
+    <color name="colorAccent">#1ABCaC</color>
+    <color name="colorText">#cc555555</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorHint">#bb888888</color>
+    <color name="color_styles">#991ABCaC</color>
+    <color name="color_styles_search">#fff</color>
+    <color name="color_back_search">#88ffffff</color>
+
+    <color name="colorError">#ff4b4c</color>
+    <color name="app_bar_color">#33a6a6</color>
+
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:background="#fff">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/imgBackFullScreenImage">
+
+        <com.codesgood.views.JustifiedTextView
+            android:id="@+id/txtInfoFullScreen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lineSpacingExtra="@dimen/_12dp"
+            android:padding="@dimen/_16dp"
+            android:scaleType="center"
+            android:text="@string/app_info_text" />
+    </androidx.core.widget.NestedScrollView>
+
+    <ImageView
+        android:id="@+id/imgBackFullScreenImage"
+        android:layout_width="@dimen/_48dp"
+        android:layout_height="@dimen/_54dp"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/ic_left_arrow" />
+
+</RelativeLayout>

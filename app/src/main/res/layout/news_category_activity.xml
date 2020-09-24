@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="newsCategory"
+            type="com.mohammadreza.news.viewmodel.NewsCategoryViewModel" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/linearParentCategory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarCategory"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_54dp"
+            android:background="@color/app_bar_color"
+            android:gravity="center_vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbarCategory"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_48dp"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+
+                >
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/circle_image_view_news_category"
+                    android:layout_width="@dimen/_40dp"
+                    android:layout_height="@dimen/_40dp"
+                    android:background="@drawable/change"
+                    android:onClick="@{newsCategory.onClickImgProfile}"
+                    app:srcProfile="@{newsCategory.imageProfileUri}" />
+
+                <TextView
+                    android:id="@+id/userNameCategory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="@dimen/_16dp"
+                    android:paddingLeft="@dimen/_16dp"
+                    android:paddingEnd="@dimen/_16dp"
+                    android:paddingRight="@dimen/_16dp"
+                    android:singleLine="true"
+                    android:text="@{newsCategory.userName}"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="@dimen/_18sp" />
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/_8dp">
+
+
+            <GridLayout
+                android:id="@+id/mGridLayoutCategory"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardAllNewsCategory"
+                    android:layout_width="@dimen/_200dp"
+                    android:layout_height="@dimen/_200dp"
+                    android:layout_rowSpan="2"
+                    android:layout_rowWeight="1"
+                    android:layout_columnSpan="2"
+                    android:layout_columnWeight="1"
+                    android:layout_marginStart="@dimen/_5dp"
+                    android:layout_marginLeft="@dimen/_5dp"
+                    android:layout_marginTop="@dimen/_4dp"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtAllNewsCategory.getText().toString())}"
+                    android:tag="allnews"
+                    app:cardCornerRadius="@dimen/_4dp"
+                    tools:targetApi="lollipop">
+
+
+                    <ImageView
+                        android:id="@+id/imgAllCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/all" />
+
+                    <TextView
+                        android:id="@+id/txtAllNewsCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/allNews"
+                        android:textAlignment="center"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardPhotoCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtPhotoCategory.getText().toString())}"
+                    android:tag="8"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgPhotoCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/photo" />
+
+                    <TextView
+                        android:id="@+id/txtPhotoCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/photo"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardJusticeCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtRightsCategory.getText().toString())}"
+                    android:tag="2"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgJusticeCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY"
+
+                        android:src="@drawable/justice" />
+
+
+                    <TextView
+                        android:id="@+id/txtRightsCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/justice"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardPoliticsCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtPoliticsCategory.getText().toString())}"
+                    android:tag="3"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgPoliticsCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:scaleType="fitXY"
+
+                        android:src="@drawable/politics" />
+
+                    <TextView
+                        android:id="@+id/txtPoliticsCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/politics"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardSocietyCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtSocietyCategory.getText().toString())}"
+                    android:tag="4"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgSocietyCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+
+                        android:src="@drawable/society" />
+
+
+                    <TextView
+                        android:id="@+id/txtSocietyCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/society"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardEconomyCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtEconomyCategory.getText().toString())}"
+                    android:tag="5"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgEconomyCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+
+                        android:src="@drawable/economy" />
+
+
+                    <TextView
+                        android:id="@+id/txtEconomyCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/economy"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardCulturalCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtCulturalCategory.getText().toString())}"
+                    android:tag="6"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgCulturalCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/cultural" />
+
+
+                    <TextView
+                        android:id="@+id/txtCulturalCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/cultural"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardInternationalCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtInternationalCategory.getText().toString())}"
+                    android:tag="9"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgInternationalCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/international" />
+
+                    <TextView
+                        android:id="@+id/txtInternationalCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/international"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardCyberspaceCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtCyberspaceCategory.getText().toString())}"
+                    android:tag="7"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgCyberspaceCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/cybery" />
+
+                    <TextView
+                        android:id="@+id/txtCyberspaceCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/cyberspace"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardMultiMediaCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtMultiMediaCategory.getText().toString())}"
+                    android:tag="11"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgMultiMediaCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/multi_media" />
+
+                    <TextView
+                        android:id="@+id/txtMultiMediaCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/multiMedia"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardMostvisitedCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtMostvisitedCategory.getText().toString())}"
+                    android:tag="all/mostvisited"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgMostvisitedCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/most_visited" />
+
+                    <TextView
+                        android:id="@+id/txtMostvisitedCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/mostVisited"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardMostCommentedCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtMostCommentedCategory.getText().toString())}"
+                    android:tag="all/mostvisited"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgMostCommentedCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/most_commented" />
+
+                    <TextView
+                        android:id="@+id/txtMostCommentedCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/mostCommented"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardEnergyCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtEnergyCategory.getText().toString())}"
+                    android:tag="5/58"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgEnergyCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+
+                        android:src="@drawable/energy" />
+
+
+                    <TextView
+                        android:id="@+id/txtEnergyCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/energy"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardSportCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtSportCategory.getText().toString())}"
+                    android:tag="10/67"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgSportCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/sport" />
+
+                    <TextView
+                        android:id="@+id/txtSportCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/sport"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardBourseCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtBourseCategory.getText().toString())}"
+                    android:tag="5/28"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgBourseCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/bourse" />
+
+                    <TextView
+                        android:id="@+id/txtBourseCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/bourse"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardStatesCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="start"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtStatesCategory.getText().toString())}"
+                    android:tag="8/54"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgStatesCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/states" />
+
+                    <TextView
+                        android:id="@+id/txtStatesCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/states"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardLiteratureCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtLiteratureCategory.getText().toString())}"
+                    android:tag="6/35"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgLiteratureCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/literature" />
+
+                    <TextView
+                        android:id="@+id/txtLiteratureCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/literature"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardCinemaCategory"
+                    android:layout_width="110dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end"
+                    android:onClick="@{v -> newsCategory.onCardClick(v, txtCinemaCategory.getText().toString())}"
+                    android:tag="6/34"
+                    app:cardCornerRadius="@dimen/_4dp">
+
+
+                    <ImageView
+                        android:id="@+id/imgCinemaCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        android:scaleType="fitXY"
+                        android:src="@drawable/cinema" />
+
+                    <TextView
+                        android:id="@+id/txtCinemaCategory"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_24dp"
+                        android:layout_gravity="bottom"
+                        android:background="#99999999"
+                        android:gravity="center"
+                        android:singleLine="true"
+                        android:text="@string/cinema"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/_16sp" />
+
+
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="signupVm"
+            type="com.mohammadreza.news.viewmodel.SignUpViewModel" />
+    </data>
+
+    <ScrollView
+        android:id="@+id/scrollSignUp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parentSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#00ff9999"
+            android:paddingStart="@dimen/_32dp"
+            android:paddingLeft="@dimen/_32dp"
+            android:paddingTop="@dimen/_16dp"
+            android:paddingEnd="@dimen/_32dp"
+            android:paddingRight="@dimen/_32dp"
+            android:paddingBottom="@dimen/_32dp">
+
+
+            <EditText
+                android:id="@+id/edtUserNameSignup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_54dp"
+                android:layout_gravity="center"
+                android:background="@drawable/empty_round_style"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:hint="@string/username"
+                android:maxLength="50"
+                android:singleLine="true"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorHint"
+                android:textCursorDrawable="@drawable/color_cursor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <EditText
+                android:id="@+id/edtEmailSignUp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_54dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_16dp"
+                android:background="@drawable/empty_round_style"
+                android:gravity="center"
+                android:hint="@string/email_address"
+                android:maxLength="50"
+                android:singleLine="true"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorHint"
+                android:textCursorDrawable="@drawable/color_cursor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtUserNameSignup" />
+
+
+            <EditText
+                android:id="@+id/edtPasswordSignup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_54dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_16dp"
+
+                android:background="@drawable/empty_round_style"
+                android:gravity="center"
+                android:hint="@string/pass"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:singleLine="true"
+                android:textColor="@color/colorText"
+                android:textColorHint="@color/colorHint"
+                android:textCursorDrawable="@drawable/color_cursor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmailSignUp" />
+
+
+            <FrameLayout
+                android:id="@+id/mFrameLayoutSignup"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_54dp"
+                android:layout_marginTop="@dimen/_16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPasswordSignup">
+
+                <Button
+                    android:id="@+id/btnJoinUs"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_54dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/full_rounded_style"
+                    android:onClick="@{v -> signupVm.onClickJoinUs(v , edtUserNameSignup , edtEmailSignUp,edtPasswordSignup  ,mProgressSignup ,mFrameLayoutSignup )}"
+                    android:singleLine="true"
+                    android:tag="@string/join_us"
+                    android:text="@string/join_us"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+
+                <com.budiyev.android.circularprogressbar.CircularProgressBar
+                    android:id="@+id/mProgressSignup"
+                    android:layout_width="@dimen/_54dp"
+                    android:layout_height="@dimen/_54dp"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    app:animateProgress="true"
+                    app:backgroundStrokeWidth="1dp"
+                    app:drawBackgroundStroke="false"
+                    app:foregroundStrokeCap="butt"
+                    app:foregroundStrokeColor="@color/colorPrimary"
+                    app:foregroundStrokeWidth="1dp"
+                    app:indeterminate="true"
+                    app:indeterminateMinimumAngle="50"
+                    app:indeterminateRotationAnimationDuration="500"
+                    app:indeterminateSweepAnimationDuration="500"
+                    app:maximum="360"
+                    app:progress="310"
+                    app:progressAnimationDuration="10"
+                    app:startAngle="320" />
+
+
+            </FrameLayout>
+
+
+            <ImageButton
+                android:id="@+id/btnLineLeft"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_32dp"
+                android:layout_weight="0.5"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toStartOf="@+id/txtOr"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mFrameLayoutSignup" />
+
+            <TextView
+                android:id="@+id/txtOr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="@dimen/_24dp"
+                android:layout_marginEnd="@dimen/_5dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/or"
+                app:layout_constraintEnd_toStartOf="@+id/btnLineRight"
+                app:layout_constraintStart_toEndOf="@+id/btnLineLeft"
+                app:layout_constraintTop_toBottomOf="@+id/mFrameLayoutSignup" />
+
+            <ImageButton
+                android:id="@+id/btnLineRight"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_32dp"
+                android:layout_weight="0.5"
+                android:background="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txtOr"
+                app:layout_constraintTop_toBottomOf="@+id/mFrameLayoutSignup" />
+
+
+            <TextView
+                android:id="@+id/btnLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/_12dp"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="@string/login_with"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtOr" />
+
+
+            <LinearLayout
+                android:id="@+id/linearGoogleSignUp"
+                android:layout_width="@dimen/_120dp"
+                android:layout_height="@dimen/_54dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:background="@drawable/full_rounded_style"
+                android:gravity="center"
+                android:onClick="@{v -> signupVm.onClickLinearGoogleAndFacebookSignUp(v)}"
+                android:orientation="horizontal"
+                android:tag="@string/linearGoogleSignUp"
+                app:layout_constraintEnd_toStartOf="@+id/linearFacebookSignUp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin">
+
+                <ImageView
+                    android:layout_width="@dimen/_20dp"
+                    android:layout_height="@dimen/_20dp"
+                    app:srcCompat="@drawable/ic_google" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8dp"
+                    android:layout_marginLeft="@dimen/_8dp"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/google"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearFacebookSignUp"
+                android:layout_width="@dimen/_120dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="@dimen/_16dp"
+                android:background="@drawable/full_rounded_style"
+                android:gravity="center"
+                android:onClick="@{v -> signupVm.onClickLinearGoogleAndFacebookSignUp(v)}"
+                android:orientation="horizontal"
+                android:tag="@string/linearFacebookSingUp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/linearGoogleSignUp"
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin">
+
+                <ImageView
+                    android:layout_width="@dimen/_20dp"
+                    android:layout_height="@dimen/_20dp"
+                    app:srcCompat="@drawable/ic_facebook" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_8dp"
+                    android:layout_marginLeft="@dimen/_8dp"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/facebook"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite" />
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</layout>

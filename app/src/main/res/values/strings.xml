@@ -1,0 +1,206 @@
+<resources>
+    <string name="app_name">MRNews</string>
+    <string name="login">ورود</string>
+    <string name="username">نام کاربری</string>
+    <string name="pass">کلمه عبور</string>
+    <string name="signup">ثبت نام</string>
+    <string name="or">یا</string>
+    <string name="login_with">عضویت با</string>
+    <string name="google">گوگل</string>
+    <string name="linearGoogleSignUp">linearGoogleSignUp</string>
+    <string name="facebook">فیس بوک</string>
+    <string name="go">بریم !</string>
+    <string name="join_us">به ما بپیوندید !</string>
+
+    <string name="label_select_picture">انتخاب تصصویر</string>
+    <!--    <string name="no_access_to_net">"No Access To Network Check Your Connection !"</string>-->
+    <string name="no_access_to_net">"مشکل در اتصال به اینترنت !"</string>
+    <string name="linearFacebookLogin">linearFacebookLogin</string>
+    <string name="linearFacebookSingUp">linearFacebookSingUp</string>
+
+
+    <string name="linearGoogleLogin">linearGoogleLogin</string>
+    <!--    <string name="forgot">Forgot Password ?</string>-->
+    <string name="forgot">فراموشی کلمه عبور؟</string>
+    <string name="keep_me_login">مرا به یاد بسپار</string>
+    <string name="send_it">ارسال کلمه عبور</string>
+    <string name="password_recovery">بازیابی رمز عبور</string>
+    <string name="enter_your_email">ایمیل خود را برای بازیابی کلمه عبور وارد نمایید</string>
+    <!--    <string name="yourPassword">Hi dear , we have noticed that you have forgotten your MRNews application password </string>-->
+    <string name="yourPassword">سلام کاربر گرامی ما متوجه شده ایم که شما کلمه عبور در اپلیکیشن MRNews را فراموش کرده اید</string>
+    <string name="email_address">آدرس ایمیل</string>
+    <string name="please_wait">لطفا منتظر بمانید ...</string>
+    <string name="news_video">جزئیات متنی و یا تصویری بیشتری برای این خبر وجود ندارد برای مشاهده ویدئو به لینک زیر مراجعه نمایید .</string>
+    <string name="no_detail">این خبر فاقد جزئیات بیشتر است .</string>
+    <string name="from">from</string>
+    <string name="mohammad_reza_abiri">Mohammad reza abiri</string>
+    <string name="try_again">تلاش مجدد</string>
+    <string name="crop">برش</string>
+    <string name="photo">عکس</string>
+    <string name="mostCommented">پر بحث ترین</string>
+    <string name="mostVisited">پر بازدیدترین</string>
+    <string name="multiMedia">چند رسانه ای</string>
+    <string name="cyberspace">فضای مجازی</string>
+    <string name="international">بین الملل</string>
+    <string name="cultural">فرهنگی</string>
+    <string name="economy">اقتصادی</string>
+    <string name="society">اجتماعی</string>
+    <string name="politics">سیاسی</string>
+    <string name="sport">ورزشی</string>
+    <string name="bourse">بورس</string>
+    <string name="states">استان ها</string>
+    <string name="literature">ادبیات</string>
+    <string name="cinema">سینما</string>
+    <string name="justice">حقوق و قضا</string>
+    <string name="energy">انرژی</string>
+    <string name="allNews">مجموع اخبار</string>
+    <string name="send_pass_to_email">کلمه عبور با موفقیت به ایمیل شما ارسال شد!</string>
+    <string name="wrong">خطا در اتصال به حساب کاربری!</string>
+    <string name="wrong_email">ارسال با خطا مواجه شد دوباره سعی کنید !</string>
+    <string name="enter_valid_email">آدرس ایمیل را بصورت صحیح وارد نمایید</string>
+    <string name="enter_user_pass">نام کاربری و کلمه عبور را وارد نمایید!</string>
+    <string name="enter_user_name">نام کاربری را وارد نمایید!</string>
+    <string name="enter_pass">کلمه عبور را وارد نمایید!</string>
+    <string name="user_or_pass_wrong">نام کاربری یا کلمه عبور صحیح نمی باشد !</string>
+    <string name="email_wrong">ایمیلی با این آدرس ثبت نام نشده است !</string>
+    <string name="account_exist">حساب کاربری با این نام از قبل وجود دارد !</string>
+    <string name="minimum_pass">کلمه عبور باید حداقل دارای 6 کاراکتر باشد !</string>
+    <!--    <string name="enter_user_email_pass">Enter your user name and email جزئیاتand password</string>-->
+    <string name="enter_user_email_pass">لطفا همه موارد را تکمیل نمایید !</string>
+
+    <string name="log_out">خروج از حساب کاربری</string>
+
+    <!--    facebook id-->
+    <string name="facebook_app_id">726947877865708</string>
+    <string name="fb_login_protocol_scheme">fb726947877865708</string>
+    <string name="vpn_check">پیش از استفاده از این بخش حتما از اتصال پروکسی خود اطمینان حاصل نمایید !</string>
+    <string name="exception_cancel">12501:</string>
+    <string name="exit_app_message">برای خروج از برنامه دوباره دکمه بازگشت را فشار دهید</string>
+    <string name="exit_from_app_title">خروج از برنامه</string>
+    <string name="app_info">درباره اپلیکیشن</string>
+    <string name="check_network_settings">لطفا تنظیمات اینترنت خود را بررسی کنید.</string>
+    <string name="time_trial">مدت زمان استفاده محدود به پایان رسیده است لطفا نسخه اصلی را خریداری نمایید!</string>
+    <string name="news_date_format">dd MMM yyyy hh:mm:ss Z</string>
+    <string name="v">v</string>
+    <string name="drag_to_down">برای بروزرسانی صفحه نمایش را به پایین بکشید !</string>
+    <string name="no_network">لطفا از اتصال دستگاه خود به اینترنت مطمئن شوید !</string>
+    <string name="جستجو">search</string>
+    <string name="com_from_profile">comeFromProfile</string>
+    <string name="com_from_detail">comeFromDetail</string>
+    <string name="alert_save_in_gallery">برای ذخیره و بازبابی تصاویر خبر شما باید مجوز دسترسی به حافطه داخلی گوشی را صادر نمایید !</string>
+    <!--    <string name="check_net_connection">از اتصال شبکه خود اطمینان حاصل نمایید و برای بروزرسانی اخبار صفحه نمایش را به پایین بکشید !</string>-->
+    <string name="server_client_id">774951990682-bmi9jr2m3v97bjjvbj5ulvhemmt535en.apps.googleusercontent.com</string>
+    <string name="search">جستجو</string>
+
+
+    <string name="app_info_text">این اپلیکیشن یک اپلیکیشن خبری می باشد که بر پایه معماری  mvvm و با استفاده از dataBinding توسعه داده شده که اخبار Rss  را از سایت میزان آنلاین دریافت و نمایش میدهد.  همچنین از firebase crashlytics  برای گزارش خطاها استفاده شده است.
+\n
+        \n
+1- در اکتیویتی ثبت نام:
+- استفاده از tablayout  و viewpager  برای نمایش و پیمایش بین 2 فرگمنت  login و signup
+\n
+        \n
+2- در فرگمت signup :
+         \n
+- قابلیت ثبت نام با نام کاربری و کلمه عبور
+        \n
+-استفاده از ValueAnimator برای تبدیل button به progressbar
+        \n
+- قابلیت ثبت نام با اکانت google و facebook  و احراز هویت کاربر با استفاده از پروتکل oauth و سرویس firebase
+\n
+        \n
+3- در فرگمت login :
+         \n
+- قابلیت ورود با استفاده از نام کاربری و کلمه عبور
+        \n
+- قابلیت بازیابی کلمه عبور و ارسال به ایمیل با استفاده از کتابخانه javax mail و asynctask
+        \n
+- استفاده از Dialog برای نمایش صفحه فراموشی کلمه عبور
+        \n
+- استفاده از alertDialog برای نمایش پیغام های خاص به کاربر
+        \n
+- قابلیت ورود با حالت لاگین نگه داشتن کاربر
+        \n
+-استفاده از ValueAnimator برای تبدیل button به progressbar
+        \n
+- قابلیت ثبت نام با اکانت google و facebook  و احراز هویت کاربر با استفاده از پروتکل oauth و سرویس firebase
+\n
+        \n
+4- در اکتیویتی دسته بندی خبر ها:
+        \n
+
+- بارگذاری و نمایش تصویر کاربر با استفاده از کتابخانه Picasso
+        \n
+- قابلیت ذخیره و بازیابی تصویر کاربر در حافظه دستگاه
+        \n
+- قابلیت تعویض تصویر کاربر با استفاده از کتابخانه imageCroper
+        \n
+- استفاده از کتابخانه luban برای فشرده سازی تصویر کاربر
+        \n
+- استفاده از gridLayout برای نمایش و چیدمان دسته بندی اخبار
+        \n
+-استفاده از DisplayMetric برای چینش اعضای gridLayout بصورت داینامیک
+        \n
+- استفاده از کتابخانه eventbus برای برقراری ارتباط بین activity و viewModel
+          \n
+        - استفاده از toolbar برای نمایش menu
+        \n
+- قابلیت خروج از اپلیکیشن و خروج از حساب کاربری در قسمت menu
+
+        \n
+        \n
+
+5- در اکتیویتی نمایش خبرها :
+        \n
+- استفاده از کتابخانه retrofit برای دریافت اخبار rss
+        \n
+        - استفاده Filterable جهت امکان جستجو در اخبار
+          \n
+        - استفاده SnackBar جهت نمایش اعلان بروزرسانی
+
+        \n
+- استفاده از mutableLiveData
+        \n
+- استفاده از swipeRefreshLayout جهت بروزرسانی اخبار
+        \n
+- بارگذاری تصاویر با استفاده از کتابخانه picasso
+        \n
+- ذخیره خبرها با استفاده از realm database
+        \n
+- قابلیت نمایش خبرها  و تصاویر مربوطه بصورت آفلاین
+        \n
+- استفاده از کتابخانه eventbus برای برقراری ارتباط بین کلاس های مختلف
+        \n
+\n
+
+6- در اکتیویتی جزئیات خبرها :
+           \n
+        - استفاده از کتابخانه Volley جهت دریافت جزئیات اخبار از صفحات Html
+
+          \n
+        - استفاده از کتابخانه Jsoup جهت خواندن صفحات Html
+
+        \n
+        - استفاده از gridLayout جهت نمایش خبر های تصویری
+
+           \n
+     - استفاده از swipeRefreshLayout جهت بروزرسانی اخبار
+
+   \n
+                - استفاده SnackBar جهت نمایش اعلان ها
+
+   \n
+        - ذخیره جزئیات خبرها با استفاده از realm database
+        \n
+  - استفاده از CollapsingToolbar
+
+        \n
+
+- استفاده از toolbar برای نمایش menu
+        \n
+- قابلیت خروج از اپلیکیشن و خروج از حساب کاربری در قسمت menu
+</string>
+
+
+
+</resources>
